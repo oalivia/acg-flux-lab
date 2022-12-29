@@ -1,21 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-        name: turtle-deployment
-        labels:
-                app: ngnix
+        name: turtle-deployment2
+        namespace: default
 spec:
         replicas: 3
         selector:
                 matchLabels:
-                        app: nginx
+                        app: turtle
         template:
                 metadata:
                         labels:
-                                app: nginx
+                                app: turtle
                 spec:
                         containers:
                         - name: nginx
                           image: nginx:stable
-                          ports:
-                          - containerPort: 80
